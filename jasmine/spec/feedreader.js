@@ -104,7 +104,7 @@ $(function() {
 
         it('at least one entry is in the feed', function() {
             const feed = $('.feed .entry');
-            expect(feed.length > 0).toBe(true);
+            expect(feed.length).not.toBe(0);
         });
 
     });
