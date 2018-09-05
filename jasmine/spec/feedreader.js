@@ -97,6 +97,16 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        // when loadFeed(id, cb) is called and completes its work
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
+
+        it('at least one entry is in the feed', function() {
+            const feed = $('.feed .entry');
+            expect(feed.length > 0).toBe(true);
+        });
+
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
