@@ -117,6 +117,27 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
+        const feed = document.querySelector('.feed');
+        const feedInitial = [];
+
+        // when a new feed is loaded by loadFeed()
+        beforeEach(function(done) {
+            loadFeed(0);
+            Array.from(feed.children).forEach(function(entry) {
+                feedInitial.push(entry.innerText);
+            });
+            loadFeed(1, done);
+        });
+
+        it('content changes', function() {
+            Array.from(feed.children).forEach(function(entry, index) {
+
+                console.log("1. " + entry.innerText + "2. " + feedInitial[index], entry.innerText === feedInitial[index]);
+
+                expect(entry.innerText === feedInitial[index]).toBe(false);
+            });
+        });
+
     });
 
 }());
