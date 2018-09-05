@@ -131,9 +131,6 @@ $(function() {
 
         it('content changes', function() {
             Array.from(feed.children).forEach(function(entry, index) {
-
-                console.log("1. " + entry.innerText + "2. " + feedInitial[index], entry.innerText === feedInitial[index]);
-
                 expect(entry.innerText === feedInitial[index]).toBe(false);
             });
         });
