@@ -66,11 +66,23 @@ $(function() {
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+        /* TODO: Write a test that ensures the menu changes
+        * visibility when the menu icon is clicked. This test
+        * should have two expectations: does the menu display when
+        * clicked and does it hide when clicked again.
+        */
+        it('changes visibility when clicked', function() {
+            const body = $('body');
+            const menuIcon = $('.menu-icon-link');
+
+            // click menu icon to show menu
+            menuIcon.trigger('click');
+            expect(body.hasClass('menu-hidden')).toBe(false);
+
+            // click menu icon again to hide menu
+            menuIcon.trigger('click');
+            expect(body.hasClass('menu-hidden')).toBe(true);
+        });
 
     });
 
