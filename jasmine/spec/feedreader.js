@@ -117,24 +117,26 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        // TODO: Refactor code below to jQuery
-
-        const feed = document.querySelector('.feed');
-        const feedInitial = [];
+        let feedOne,
+            feedTwo;
 
         // when a new feed is loaded by loadFeed()
         beforeEach(function(done) {
-            loadFeed(0);
-            Array.from(feed.children).forEach(function(entry) {
-                feedInitial.push(entry.innerText);
+            // load first feed
+            loadFeed(0, function() {
+                feedOne = $('.feed').contents();
+                // load second feed
+                loadFeed(1, function() {
+                    feedTwo = $('.feed').contents();
+                    done();
+                });
             });
-            loadFeed(1, done);
         });
 
-        it('content changes', function() {
-            Array.from(feed.children).forEach(function(entry, index) {
-                expect(entry.innerText === feedInitial[index]).toBe(false);
-            });
+        // the content changes afer a new feed is loaded
+        it('content changes', function(done) {
+            expect(feedOne).not.toBe(feedTwo);
+            done();
         });
 
     });
