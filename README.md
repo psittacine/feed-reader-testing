@@ -16,7 +16,11 @@ To run the application, load `index.html` in a web browser, or view it live [her
 
 ### References:
 
-* Feed Reader Walkthrough by Matthew Cranford:
+* Webinar: [Feed Reader Testing, with Alain Cadenat (EMEA)](https://www.youtube.com/watch?v=pPt4oOKNdEk)
+* Webinar: [Feed Reader Testing, with Mohamed Riaad (EMEA)](https://www.youtube.com/watch?v=Ut_L8YUImbw)
+* Webinar: [Feed Reader Testing, with Ryan Boris
+](https://www.youtube.com/watch?v=7kOBXPbDmyw)
+* Feed Reader Walkthrough, by Matthew Cranford:
     * [Part 1 – Starter Code](https://matthewcranford.com/feed-reader-walkthrough-part-1-starter-code/)
     * [Part 2 – Writing the First Tests](https://matthewcranford.com/feed-reader-walkthrough-part-2-writing-the-first-tests/)
     * [Part 3 – Menu Test Suite](https://matthewcranford.com/feed-reader-walkthrough-part-3-menu-test-suite/)
